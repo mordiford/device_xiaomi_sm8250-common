@@ -74,8 +74,4 @@
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
 
-    <!--  DT2W    -->
-    <string name="dt2w_enable_title">Double-Tap to Wake </string>
-    <string name="dt2w_enable_summary">Display boot in screen-off state by a double-tap</string>
-
 </resources>
