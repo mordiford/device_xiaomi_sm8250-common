@@ -23,6 +23,8 @@
 #include <cmath>
 #include <fstream>
 
+#define FINGERPRINT_ACQUIRED_VENDOR 6
+
 #define COMMAND_NIT 10
 #define PARAM_NIT_630_FOD 1
 #define PARAM_NIT_NONE 0
@@ -120,16 +122,16 @@ Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t v
         return false;
     }
 
-    if (acquiredInfo == 6) {
-        if (vendorCode == 22) {
-            Return<void> ret = mCallback->onFingerDown();
+    if (acquiredInfo == FINGERPRINT_ACQUIRED_VENDOR) {
+        if (vendorCode == 0) {
+           Return<void> ret = mCallback->onFingerDown();
             if (!ret.isOk()) {
                 LOG(ERROR) << "FingerDown() error: " << ret.description();
             }
             return true;
         }
 
-        if (vendorCode == 23) {
+        if (vendorCode == 1) {
             Return<void> ret = mCallback->onFingerUp();
             if (!ret.isOk()) {
                 LOG(ERROR) << "FingerUp() error: " << ret.description();
@@ -137,7 +139,6 @@ Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t v
             return true;
         }
     }
-    LOG(ERROR) << "acquiredInfo: " << acquiredInfo << ", vendorCode: " << vendorCode << "\n";
     return false;
 }
 
