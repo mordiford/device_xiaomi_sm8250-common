@@ -526,7 +526,4 @@
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
-    <!-- Flag specifying whether pocked mode is available on device -->
-    <bool name="config_pocketModeSupported">false</bool>
-
 </resources>
