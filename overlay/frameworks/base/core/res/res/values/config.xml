@@ -332,9 +332,6 @@
     <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
     <string name="config_SmartChargingResumeValue" translatable="false">0</string>
 
-    <!-- Whether to show a custom view for FOD -->
-    <bool name="config_needCustomFODView">true</bool>
-
     <!-- Screen off FOD -->
     <bool name="config_supportScreenOffFod">true</bool>
 
