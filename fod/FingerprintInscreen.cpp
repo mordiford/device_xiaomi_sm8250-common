@@ -16,6 +16,8 @@
 #define PARAM_NIT_FOD 1
 #define PARAM_NIT_NONE 0
 
+#define TOUCH_FOD_ENABLE 10
+
 namespace vendor {
 namespace lineage {
 namespace biometrics {
@@ -25,6 +27,7 @@ namespace V1_0 {
 namespace implementation {
 
 FingerprintInscreen::FingerprintInscreen() {
+    mTouchFeatureService = ITouchFeature::getService();
     mXiaomiFingerprintService = IXiaomiFingerprint::getService();
 }
 
@@ -49,10 +52,12 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    mTouchFeatureService->setTouchMode(TOUCH_FOD_ENABLE, 1);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
+    mTouchFeatureService->resetTouchMode(TOUCH_FOD_ENABLE);
     return Void();
 }
 
