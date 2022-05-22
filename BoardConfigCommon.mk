@@ -70,7 +70,6 @@ TARGET_BOOTLOADER_BOARD_NAME := kona
 TARGET_NO_BOOTLOADER := true
 
 # Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Display
@@ -211,7 +210,7 @@ SOONG_CONFIG_XIAOMI_KONA_ROOTDIR_PARTITION_SCHEME := a
 endif
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2022-02-01
+VENDOR_SECURITY_PATCH := 2022-04-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
